@@ -8,7 +8,7 @@ import { Products } from './components/Products';
 import { NewProducts } from './components/NewProducts';
 import { FeaturedProducts } from './components/FeaturedProducts';
 import { Users } from './components/Users';
-import { UsersDetails } from './components/UsersDetails';
+import { UserDetails } from './components/UsersDetails';
 import { Admin } from './components/Admin';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         </Route>
 
         <Route path="users" element={<Users />}>
-          <Route path="users/:userId" element={<UsersDetails />} />
+          <Route path=":userId" element={<UserDetails />} />
           <Route path="admin" element={<Admin />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
