@@ -11,11 +11,13 @@ import { FeaturedProducts } from './components/FeaturedProducts';
 import { Users } from './components/Users';
 import { UserDetails } from './components/UsersDetails';
 import { Admin } from './components/Admin';
+import Profile from './components/Profile';
+import { AuthProvider } from './components/auth';
 const LazyAbout = React.lazy(() => import('./components/About'));
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -39,9 +41,11 @@ function App() {
           <Route path=":userId" element={<UserDetails />} />
           <Route path="admin" element={<Admin />} />
         </Route>
+
+        <Route path="profile" element={<Profile />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
-    </>
+    </AuthProvider>
   );
 }
 
