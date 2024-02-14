@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './components/Home';
 //import { About } from './components/About';
+import { Login } from './components/Login';
 import { Navbar } from './components/Navbar';
 import { OrderSummary } from './components/OrderSummary';
 import { NoMatch } from './components/NoMatch';
@@ -12,6 +13,7 @@ import { Users } from './components/Users';
 import { UserDetails } from './components/UsersDetails';
 import { Admin } from './components/Admin';
 import Profile from './components/Profile';
+
 import { AuthProvider } from './components/auth';
 const LazyAbout = React.lazy(() => import('./components/About'));
 
@@ -43,6 +45,7 @@ function App() {
         </Route>
 
         <Route path="profile" element={<Profile />} />
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </AuthProvider>
